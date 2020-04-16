@@ -1805,6 +1805,15 @@ MM.Command.Center.execute = function() {
 	MM.App.map.center();
 }
 
+MM.Command.Export = Object.create(MM.Command, {
+	label: {value: "Export as json"},
+	keys: {value: [{keyCode: "s", ctrlKey:true}]}
+});
+MM.Command.Export.execute = function() {
+    console.log("save file as json");
+    MM.App.io.quickSave();
+}
+
 MM.Command.New = Object.create(MM.Command, {
 	label: {value: "New map"},
 	keys: {value: [{keyCode: "N".charCodeAt(0), ctrlKey:true}]}
